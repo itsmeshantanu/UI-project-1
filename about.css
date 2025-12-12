@@ -1,3 +1,7 @@
+/* ================================
+   ABOUT PAGE – FINAL & PERFECT CSS
+   ================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +15,7 @@ body {
     line-height: 1.7;
 }
 
+/* Top banner */
 .top-banner {
     background: #f7f7f7;
     text-align: center;
@@ -19,12 +24,14 @@ body {
     color: #222;
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 18px;
 }
 
+/* Header */
 .site-header {
     position: sticky;
     top: 0;
@@ -41,6 +48,7 @@ body {
     position: relative;
 }
 
+/* Brand */
 .brand {
     display: flex;
     align-items: center;
@@ -67,6 +75,7 @@ body {
     margin-top: -4px;
 }
 
+/* Desktop Menu */
 .nav-links {
     display: flex;
     gap: 22px;
@@ -85,6 +94,7 @@ body {
     color: #0a7a3f;
 }
 
+/* Icons – always visible */
 .nav-icons {
     display: flex;
     gap: 14px;
@@ -101,6 +111,7 @@ body {
     color: #0a7a3f;
 }
 
+/* Hidden checkbox & Hamburger */
 #nav-toggle {
     position: absolute;
     left: -9999px;
@@ -125,6 +136,7 @@ body {
     transition: all .3s;
 }
 
+/* ==================== HERO VIDEO SECTION ==================== */
 .video-hero {
     position: relative;
     width: 100%;
@@ -134,10 +146,13 @@ body {
 .video-hero video {
     width: 100%;
     height: 80vh;
+    /* big but not too tall */
     object-fit: cover;
+    /* fills nicely without distortion */
     display: block;
 }
 
+/* Optional overlay text on video */
 .video-overlay {
     position: absolute;
     top: 50%;
@@ -159,6 +174,7 @@ body {
     font-size: 22px;
 }
 
+/* Mobile – smaller video */
 @media (max-width: 920px) {
     .video-hero video {
         height: 60vh;
@@ -188,9 +204,11 @@ body {
     border: 2px solid red;
 }
 
+/* --------------------- THREE IMAGES FIX --------------------- */
 .threeimg {
     display: flex;
     flex-wrap: nowrap;
+    /* ← this forces 3 images in one row */
     gap: 24px;
     margin: 40px auto;
     padding: 0 18px;
@@ -200,9 +218,12 @@ body {
 
 .threeimg img {
     flex: 1;
+    /* each image takes equal space */
     min-width: 0;
+    /* important for flex */
     max-width: 400px;
     height: 320px;
+    /* you can change height if you want */
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -216,11 +237,13 @@ body {
     margin: 0 auto;
 }
 
+/* ====================== MOBILE ====================== */
 @media (max-width: 920px) {
     .hamburger {
         display: flex;
     }
 
+    /* Mobile menu – only links slide down */
     .nav-links {
         position: fixed;
         top: 0;
@@ -240,6 +263,7 @@ body {
         transform: translateY(0);
     }
 
+    /* Hamburger → X */
     #nav-toggle:checked~.hamburger span:nth-child(1) {
         transform: rotate(45deg) translate(8px, 8px);
     }
@@ -252,6 +276,7 @@ body {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 
+    /* Icons stay visible */
     .nav-icons {
         position: static;
         display: flex;
@@ -262,6 +287,7 @@ body {
         padding: 14px;
     }
 
+    /* Stack the three images on mobile */
     .threeimg {
         flex-direction: column;
         gap: 20px;
@@ -283,6 +309,336 @@ body {
     }
 }
 
+/* ====================== CLOSING BANNER WITH TEXT ON IMAGE ====================== */
 .closing-banner {
     position: relative;
-    margin: 60
+    margin: 60px 0 0;
+    width: 100%;
+}
+
+.closing-banner img {
+    width: 100%;
+    height: 420px;
+    /* change height if you want */
+    object-fit: cover;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    width: 90%;
+    max-width: 800px;
+}
+
+.banner-text h2 {
+    font-size: 38px;
+    margin-bottom: 16px;
+    /* text-shadow: 0 2px 10px rgb(112, 52, 84) */
+    color: orangered;
+}
+
+.banner-text p {
+    font-size: 20px;
+    text-shadow: 0 2px 8px rgba(244, 11, 11, 0.6);
+}
+
+/* Make text smaller on mobile */
+@media (max-width: 920px) {
+    .closing-banner img {
+        height: 360px;
+    }
+
+    .banner-text h2 {
+        font-size: 28px;
+    }
+
+    .banner-text p {
+        font-size: 17px;
+    }
+}
+
+/* ==================== FOUNDER SECTION – IMAGE + TEXT SIDE BY SIDE ==================== */
+.founder-section {
+    display: flex;
+    /* puts image and text side by side */
+    align-items: center;
+    /* vertically centers them */
+    gap: 80px;
+    /* space between image and text */
+    padding: 60px 18px;
+    justify-content: end max-width: 1100px;
+    /* margin: 0 auto; */
+    /* centers the whole section */
+}
+
+.founder-image {
+    flex: 1;
+    /* takes 48% space */
+    text-align: center;
+}
+
+.founder-image img {
+    width: 500px;
+    /* size of circle */
+    height: 500px;
+    border-radius: 50%;
+    /* makes it perfect circle */
+    object-fit: cover;
+    /* crops image nicely */
+    border: 8px solid #fff;
+    /* white border around circle */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.founder-text {
+    flex: 1;
+    /* takes 48% space */
+}
+
+.founder-text h2 {
+    font-size: 28px;
+    color: #1a5d3f;
+    margin-bottom: 20px;
+}
+
+.founder-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* On mobile → image on top, text below */
+@media (max-width: 920px) {
+    .founder-section {
+        flex-direction: column;
+        /* stack vertically */
+        text-align: center;
+        padding: 40px 18px;
+    }
+
+    .founder-image img {
+        width: 320px;
+        height: 320px;
+    }
+
+    .founder-text h2 {
+        font-size: 24px;
+    }
+}
+
+/* ==================== OUR STORY – TEXT LEFT + IMAGE ON EXTREME RIGHT ==================== */
+.story-section {
+    display: flex;
+    align-items: center;
+    /* vertically center */
+    gap: 100px;
+    /* big beautiful space between text and image */
+    padding: 80px 5%;
+    /* lots of side space so image goes to extreme right */
+    max-width: 1400px;
+    /* wide container */
+    margin: 0 auto;
+    /* center the whole thing */
+    justify-content: space-between;
+    /* text left, image extreme right */
+}
+
+.story-image {
+    flex: 0 0 auto;
+    /* don't let it shrink */
+    text-align: center;
+}
+
+.story-image img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid #fff;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.story-text {
+    flex: 1;
+    max-width: 600px;
+    /* controls text width */
+}
+
+.story-text h2 {
+    font-size: 28px;
+    color: #1a5d3f;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Mobile – perfect stacking */
+@media (max-width: 920px) {
+    .story-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .story-image img {
+        width: 320px;
+        height: 320px;
+    }
+
+    .story-text h2 {
+        font-size: 24px;
+    }
+}
+
+.relationship {
+    text-align: center;
+}
+
+/* ==================== FULL WIDTH PARAGRAPH AT THE END ==================== */
+.fullwidth-para {
+    padding: 80px 5%;
+    background: #f9f9f9;
+    /* optional light background */
+    text-align: center;
+}
+
+.fullwidth-para p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #333;
+    max-width: 1000px;
+    /* controls how wide the text goes */
+    margin: 0 auto;
+    /* centers the text */
+    font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 920px) {
+    .fullwidth-para {
+        padding: 60px 20px;
+    }
+
+    .fullwidth-para p {
+        font-size: 16px;
+    }
+}
+
+/*==============================================================*/
+/* ==================== TWO IMAGES – CENTERED + SPACE-BETWEEN ==================== */
+.two-images {
+    display: flex;
+    justify-content: space-between;
+    /* pushes images to left and right with space in middle */
+    align-items: center;
+    max-width: 1200px;
+    /* controls total width */
+    width: 90%;
+    /* not full screen – leaves side space */
+    margin: 60px auto 0 auto;
+    /* centers the whole block + top margin */
+    gap: 20px;
+    /* extra space between if you want more than space-between */
+    padding: 0;
+}
+
+.img-left,
+.img-right {
+    width: 48%;
+    /* each takes 48% – space-between works perfectly */
+}
+
+.img-left img,
+.img-right img {
+    width: 100%;
+    height: 500px;
+    /* your height */
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    /* optional nice corners */
+}
+
+/* Mobile – stacked in center */
+@media (max-width: 920px) {
+    .two-images {
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .img-left,
+    .img-right {
+        width: 100%;
+    }
+
+    .img-left img,
+    .img-right img {
+        height: 350px;
+    }
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: #623d3d;
+    color: #eee;
+    padding: 80px 20px 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-section h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 2.3;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Mobile footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
